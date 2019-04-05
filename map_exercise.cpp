@@ -19,9 +19,22 @@ main ()
   for (auto& jj : m)
     std::cout << jj.first << " " << jj.second << std::endl;
 
-  for (auto jj = m.begin (); jj != m.end (); ++jj)
-    if (jj->second < .5)
-      m.erase (jj);
+  for (auto jj = m.begin (); jj != m.end ();)
+   {
+
+	 if (jj->second < .5)
+	{
+	
+      	jj = m.erase (jj);
+
+	}
+
+	else
+
+	{
+	jj++;
+	}
+   }
 
   std::cout << "final contents" << std::endl;
   for (auto& jj : m)
